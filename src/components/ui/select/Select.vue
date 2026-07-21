@@ -1,0 +1,58 @@
+<script setup lang="ts">
+import { cn } from '@/lib/utils'
+import {
+  SelectRoot,
+  SelectTrigger,
+  SelectValue,
+  SelectPortal,
+  SelectContent,
+  SelectViewport,
+} from 'radix-vue'
+import { ChevronDown } from '@lucide/vue'
+
+interface Props {
+  class?: string
+  modelValue?: string
+  placeholder?: string
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  placeholder: 'Select...',
+})
+
+const emit = defineEmits<{
+  'update:modelValue': [value: string]
+}>()
+</script>
+
+<template>
+  <SelectRoot
+    :model-value="modelValue"
+    @update:model-value="(val: string) => emit('update:modelValue', val)"
+  >
+    <SelectTrigger
+      :class="cn(
+        'flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm text-foreground shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1',
+        props.class,
+      )"
+    >
+      <SelectValue :placeholder="placeholder" />
+      <ChevronDown class="h-4 w-4 opacity-50" />
+    </SelectTrigger>
+    <SelectPortal>
+      <SelectContent
+        position="popper"
+        :class="cn(
+          'relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
+        )"
+      >
+        <SelectViewport
+          class="p-1"
+          :class="cn('h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]')"
+        >
+          <slot />
+        </SelectViewport>
+      </SelectContent>
+    </SelectPortal>
+  </SelectRoot>
+</template>

@@ -1,0 +1,68 @@
+{
+  "app": {
+    "title": "Alkhatt",
+    "subtitle": "Arabic Calligraphy Canvas"
+  },
+  "toolbar": {
+    "select": "Select",
+    "editPath": "Edit Path",
+    "pen": "Pen",
+    "text": "Text",
+    "hand": "Hand",
+    "zoom": "Zoom",
+    "eyedropper": "Eyedropper",
+    "zoomOut": "Zoom Out",
+    "zoomIn": "Zoom In",
+    "toggleLayers": "Toggle Layers Panel",
+    "toggleProperties": "Toggle Properties Panel",
+    "showLayers": "Show Layers Panel",
+    "hideLayers": "Hide Layers Panel",
+    "showProperties": "Show Properties Panel",
+    "hideProperties": "Hide Properties Panel",
+    "language": "Language"
+  },
+  "layers": {
+    "title": "Layers",
+    "empty": "No layers",
+    "addTextToStart": "Add text to start",
+    "delete": "Delete"
+  },
+  "properties": {
+    "title": "Properties",
+    "text": "Text",
+    "textPlaceholder": "Type Arabic text…",
+    "font": "Font",
+    "fontSize": "Font Size",
+    "strokeWidth": "Stroke Width",
+    "strokeColor": "Stroke Color",
+    "fillColor": "Fill Color",
+    "selectHint": "Select an element to edit its properties",
+    "color": "Color"
+  },
+  "fonts": {
+    "Amiri": "Amiri",
+    "Aref_Ruqaa": "Aref Ruqaa",
+    "Katibeh": "Katibeh",
+    "Noto_Naskh_Arabic": "Noto Naskh Arabic",
+    "Reem_Kufi": "Reem Kufi"
+  },
+  "canvas": {
+    "loading": "Loading canvas..."
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "status": {
+    "layers": "{count} layer | {count} layers",
+    "zoomIn": "Zoom In",
+    "zoomOut": "Zoom Out",
+    "zoomToFit": "Zoom to Fit",
+    "resetZoom": "Reset zoom to 100%"
+  },
+  "language": {
+    "en": "English",
+    "ar": "العربية"
+  }
+}

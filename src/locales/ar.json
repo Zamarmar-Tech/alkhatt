@@ -1,0 +1,68 @@
+{
+  "app": {
+    "title": "الخط",
+    "subtitle": "لوحة الخط العربي"
+  },
+  "toolbar": {
+    "select": "تحديد",
+    "editPath": "تحرير المسار",
+    "pen": "قلم",
+    "text": "نص",
+    "hand": "يد",
+    "zoom": "تكبير",
+    "eyedropper": "قطارة",
+    "zoomOut": "تصغير",
+    "zoomIn": "تكبير",
+    "toggleLayers": "تبديل لوحة الطبقات",
+    "toggleProperties": "تبديل لوحة الخصائص",
+    "showLayers": "إظهار الطبقات",
+    "hideLayers": "إخفاء الطبقات",
+    "showProperties": "إظهار الخصائص",
+    "hideProperties": "إخفاء الخصائص",
+    "language": "اللغة"
+  },
+  "layers": {
+    "title": "الطبقات",
+    "empty": "لا توجد طبقات",
+    "addTextToStart": "أضف نصاً للبدء",
+    "delete": "حذف"
+  },
+  "properties": {
+    "title": "الخصائص",
+    "text": "النص",
+    "textPlaceholder": "اكتب النص العربي…",
+    "font": "الخط",
+    "fontSize": "حجم الخط",
+    "strokeWidth": "سُمك الحد",
+    "strokeColor": "لون الحد",
+    "fillColor": "لون التعبئة",
+    "selectHint": "حدد عنصراً لتعديل خصائصه",
+    "color": "اللون"
+  },
+  "fonts": {
+    "Amiri": "أميري",
+    "Aref_Ruqaa": "عارف رقعة",
+    "Katibeh": "كاتبة",
+    "Noto_Naskh_Arabic": "نوتو نسخ عربي",
+    "Reem_Kufi": "ريم كوفي"
+  },
+  "canvas": {
+    "loading": "جاري تحميل اللوحة..."
+  },
+  "theme": {
+    "light": "فاتح",
+    "dark": "داكن",
+    "system": "النظام"
+  },
+  "status": {
+    "layers": "{count} طبقة | {count} طبقات",
+    "zoomIn": "تكبير",
+    "zoomOut": "تصغير",
+    "zoomToFit": "ملاءمة للشاشة",
+    "resetZoom": "إعادة التكبير إلى ١٠٠٪"
+  },
+  "language": {
+    "en": "English",
+    "ar": "العربية"
+  }
+}
