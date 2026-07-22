@@ -1,80 +1,66 @@
-# Alkhatt — Arabic Calligraphy Canvas
+# Alkhatt - Arabic Calligraphy Canvas
 
-A professional-grade Arabic calligraphy canvas app (like Figma for Arabic typography). Renders shaped Arabic text via HarfBuzz + OpenType.js on a Fabric.js canvas, with vector anchor-point editing.
+An Arabic calligraphy editor that runs in the browser. Type Arabic text, pick a font, and the app shapes it with HarfBuzz before rendering it as vector paths you can edit anchor by anchor.
 
 ## Features
 
-- **Arabic Text Shaping** — HarfBuzz WASM + OpenType.js pipeline correctly joins Arabic glyphs and renders them as SVG vector paths
-- **Canvas Interaction** — Fabric.js v7 with zoom (scroll wheel), pan (middle-click / Hand tool), marquee selection
-- **Multi-Select** — Shift+click to toggle, marquee to batch-select, move all selected together
-- **Duplicate** — Alt+drag to leave a copy behind
-- **Edit Path** — Drag anchor points to deform letter shapes (Edit Path tool, shortcut A)
-- **Keyboard Shortcuts** — V/A/P/T/H/Z/I for tools, Arrow keys to nudge, Delete to remove
-- **RTL/LTR** — Full Arabic and English UI with dynamic `dir` switching
-- **Dark/Light Themes** — Shadcn neutral palette with system-follow
-- **Multiple Fonts** — Amiri, Aref Ruqaa, Katibeh, Noto Naskh Arabic, Reem Kufi
+- **Arabic shaping** - HarfBuzz WASM handles glyph joining and positioning before OpenType.js converts the result to SVG paths
+- **Vector editing** - Switch to Edit Path tool (A) to see anchor points and drag them to deform letters
+- **Duplicate** - Hold Alt while dragging to leave a copy behind
+- **Multi-select** - Shift+click or use the marquee to pick multiple objects, then drag them all at once
+- **Zoom and pan** - Scroll to zoom, middle-click or Hand tool to pan
+- **RTL support** - The whole UI flips for Arabic, including the canvas direction
+- **Dark mode** - Follows system preference or toggle manually
+- **Five fonts** - Amiri, Aref Ruqaa, Katibeh, Noto Naskh Arabic, Reem Kufi
 
-## Tech Stack
+## Tech stack
 
-| Layer | Technology |
+| Layer | |
 |---|---|
 | Framework | Vue 3 (Composition API, `<script setup>`) |
 | State | Pinia |
 | Canvas | Fabric.js v7 |
-| Text Shaping | HarfBuzz WASM + OpenType.js (Web Worker) |
-| Event Bus | mitt |
+| Text shaping | HarfBuzz WASM + OpenType.js in a Web Worker |
+| Event bus | mitt |
 | CSS | Tailwind CSS v4 |
-| UI Components | Shadcn-Vue (New York style) |
+| UI | Shadcn-Vue (New York style) |
 | Icons | Lucide Vue |
 | i18n | vue-i18n (English / Arabic) |
 
-## Getting Started
+## Getting started
 
 ```bash
-# Install dependencies
 npm install
-
-# Start development server
-npm run dev
-
-# Production build
-npm run build
-
-# Preview production build
-npm run preview
+npm run dev       # starts on port 5173
+npm run build     # type-check + production build to dist/
+npm run preview   # preview the build
 ```
 
-## Project Structure
+## Project structure
 
 ```
 src/
-├── assets/fonts/         # Arabic font families
+├── assets/fonts/
 ├── components/
-│   ├── editor/           # FabricCanvas, ToolBar, PropertiesPanel, LayersPanel, etc.
-│   └── ui/               # Shadcn-Vue design system components
-├── core/                 # Typography engine (Worker, bridge, path-editor)
-├── lib/                  # Shared utilities (eventBus, i18n, shortcuts, theme)
-├── locales/              # English and Arabic translation files
-├── stores/               # Pinia stores (canvasStore, uiStore)
-├── App.vue               # Root layout
-└── main.ts               # App initialisation
+│   ├── editor/       # FabricCanvas, ToolBar, PropertiesPanel, LayersPanel
+│   └── ui/           # Shadcn-Vue components
+├── core/             # Worker, bridge, path-editor, font registry
+├── lib/              # eventBus, i18n, shortcuts, theme
+├── locales/          # en.json, ar.json
+├── stores/           # canvasStore, uiStore
+├── App.vue
+└── main.ts
 ```
 
-## Keyboard Shortcuts
+## Keyboard shortcuts
 
-| Key | Tool |
+| Key | Action |
 |---|---|
-| V | Select |
-| A | Edit Path |
-| P | Pen |
-| T | Text |
-| H | Hand (pan) |
-| Z | Zoom |
-| I | Eyedropper |
+| V / A / P / T / H / Z / I | Select / Edit Path / Pen / Text / Hand / Zoom / Eyedropper |
 | Delete | Remove selected |
 | Arrow keys | Nudge 1px |
 | Shift+Arrow | Nudge 10px |
-| +/- | Zoom in/out |
+| + / - | Zoom in / out |
 | Alt+drag | Duplicate |
 
 ## License
